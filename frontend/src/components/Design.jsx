@@ -11,7 +11,7 @@ const Design = ({ title, setTitle, description, setDescription }) => {
   };
 
   return (
-    <div className="w-1/4 bg-white p-4 min-h-screen shadow-lg">
+    <div className=" bg-white p-4 min-h-screen shadow-lg">
       <h2 className="text-xl font-bold mb-4">Settings</h2>
 
       <label className="block mb-2">Title</label>

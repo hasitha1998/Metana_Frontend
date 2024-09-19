@@ -1,5 +1,6 @@
 import { useState } from 'react';
-import SideMenu from './SideMenu'; // Import your existing SideMenu component
+//import SideMenu from './SideMenu'; // Import your existing SideMenu component
+import SideMenu from '../pages/test'; 
 
 const Content = () => {
   const [fields, setFields] = useState([

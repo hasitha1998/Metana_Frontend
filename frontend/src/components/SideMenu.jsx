@@ -19,7 +19,7 @@ const SideMenu = ({ title, setTitle, description, setDescription, onClose, setSe
   };
 
   return (
-    <div className="w-1/4 bg-white p-4 min-h-screen shadow-lg relative">
+    <div className="w-1/4 bg-white p-4 min-h-screen relative ml-5">
       <button onClick={onClose} className="absolute top-4 right-4 text-gray-600 hover:text-gray-900">
         ✕
       </button>
