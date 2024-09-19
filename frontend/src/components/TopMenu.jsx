@@ -37,7 +37,7 @@ const TopMenu = ({ onMenuChange }) => {
 
 
   return (
-    <div className="bg-white fixed top-0 z-40 h-full ">
+    <div className="w-1/4 bg-white fixed top-0 z-40 h-full ">
       <div className="flex items-center justify-between p-4 border-b">
         <div className="text-lg">
           <span
@@ -56,7 +56,7 @@ const TopMenu = ({ onMenuChange }) => {
         </div>
       </div>
 
-      <div className="flex items-center justify-around bg-gray-100 border-t px-2">
+      <div className="flex items-center justify-around bg-gray-100 border-t px-2 ">
         <span
           className={`px-4 py-2 text-lg cursor-pointer ${getMenuClass('content')}`}
           onClick={() => handleMenuClick('content')}

@@ -13,7 +13,7 @@ const Home = () => {
   };
 
   return (
-    <div className="flex w-full">
+    <div className="flex w-full ">
       {/* Side Menu for Settings */}
       <SideMenu
         title={title} // Passing title
@@ -25,7 +25,7 @@ const Home = () => {
       />
 
       {/* Main Content Area */}
-      <div className="w-full sm:w-3/4 bg-white p-8 shadow-lg flex justify-between">
+      <div className="w-full sm:w-3/4 bg-white p-8 shadow-lg flex justify-between border ml-5">
         {/* Text content on the left */}
         <div className="w-full sm:w-1/2 mt-[10rem]">
           <h1 className="text-3xl font-bold mb-4">{title}</h1> {/* Dynamically updated */}

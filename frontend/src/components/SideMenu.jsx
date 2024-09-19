@@ -1,8 +1,8 @@
+/* eslint-disable react/prop-types */
 import { useState } from 'react';
 import image1 from '../images/image1.jpg';
 
 const SideMenu = ({ title, setTitle, description, setDescription, onClose, setSelectedImage }) => {
-  console.log(title)
   const [selectedImageLocal, setSelectedImageLocal] = useState(null);
 
   const handleImageChange = (e) => {
