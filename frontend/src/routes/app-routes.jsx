@@ -1,5 +1,6 @@
 
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import TopMenu from '../components/TopMenu';
 
 // Import pages
 
@@ -21,6 +22,7 @@ import{
 const AppRoutes = () => {
   return (
     <Router>
+    <TopMenu />
       <Routes>
         {/* Public Routes */}
         <Route path="/" element={<Home />} />

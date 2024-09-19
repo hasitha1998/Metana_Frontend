@@ -1,8 +1,7 @@
 import PropTypes from 'prop-types';
 import { useState } from 'react';
-import image1 from '../images/image1.jpg'
 
-const SideMenu = ({ title, setTitle, description, setDescription, onClose }) => {
+const Design = ({ title, setTitle, description, setDescription }) => {
   const [selectedImage, setSelectedImage] = useState(null);
 
   const handleImageChange = (e) => {
@@ -11,21 +10,10 @@ const SideMenu = ({ title, setTitle, description, setDescription, onClose }) => 
     }
   };
 
-  const handleRemoveImage = () => {
-    setSelectedImage(null);
-  };
-
   return (
-    <div className="w-1/4 bg-white p-4 min-h-screen shadow-lg relative">
-      <button
-        onClick={onClose}
-        className="absolute top-4 right-4 text-gray-600 hover:text-gray-900"
-      >
-        ✕
-      </button>
+    <div className="w-1/4 bg-white p-4 min-h-screen shadow-lg">
       <h2 className="text-xl font-bold mb-4">Settings</h2>
 
-      {/* Title input */}
       <label className="block mb-2">Title</label>
       <input
         type="text"
@@ -35,7 +23,6 @@ const SideMenu = ({ title, setTitle, description, setDescription, onClose }) => 
         placeholder="Welcome to our form"
       />
 
-      {/* Description input */}
       <label className="block mb-2">Description</label>
       <input
         type="text"
@@ -45,54 +32,47 @@ const SideMenu = ({ title, setTitle, description, setDescription, onClose }) => 
         placeholder="This is a description of the form"
       />
 
-      {/* Image input */}
       <label className="block mb-2">Image</label>
-      <input type="file" onChange={handleImageChange} className="mb-4" />
-
-      {/* Display selected or fallback image */}
-      <div className="my-4">
-        <img
-          src={
-            selectedImage
-              ? selectedImage
-              : image1 // Replace with the local image path
-          }
-          alt="Selected"
-          className="w-1/2 rounded"
-        />
-        {selectedImage && (
+      <input
+        type="file"
+        onChange={handleImageChange}
+        className="mb-4"
+      />
+      
+      {selectedImage && (
+        <div className="my-4">
+          <img
+            src={selectedImage}
+            alt="Selected"
+            className="w-full rounded"
+          />
           <button
-            onClick={handleRemoveImage}
+            onClick={() => setSelectedImage(null)}
             className="bg-red-500 text-white p-1 mt-2 rounded"
           >
             Remove Image
           </button>
-        )}
-      </div>
+        </div>
+      )}
 
-      {/* Placement buttons */}
       <label className="block mb-2">Placement</label>
       <div className="flex space-x-2">
         <button className="border p-2 rounded">⬆️</button>
         <button className="border p-2 rounded">⬇️</button>
       </div>
 
-      {/* Save/Discard buttons */}
-      <div className="mt-4">
-        <button className="bg-black text-white p-2 rounded">Save</button>
-        <button className="text-red-500 ml-2">Discard</button>
-      </div>
+      <button className="bg-black text-white p-2 rounded mt-4">Save</button>
+      <button className="text-red-500 ml-2">Discard</button>
     </div>
   );
 };
 
-// PropTypes validation
-SideMenu.propTypes = {
+// Add prop-types validation for the SideMenu component
+Design.propTypes = {
   title: PropTypes.string.isRequired,
   setTitle: PropTypes.func.isRequired,
   description: PropTypes.string.isRequired,
   setDescription: PropTypes.func.isRequired,
-  onClose: PropTypes.func.isRequired,
 };
 
-export default SideMenu;
+export default Design;
