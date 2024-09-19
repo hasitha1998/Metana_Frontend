@@ -1,18 +1,21 @@
 import PropTypes from 'prop-types';
 import { useState } from 'react';
-import image1 from '../images/image1.jpg'
+import image1 from '../images/image1.jpg';
 
-const SideMenu = ({ title, setTitle, description, setDescription, onClose }) => {
-  const [selectedImage, setSelectedImage] = useState(null);
+const SideMenu = ({ title, setTitle, description, setDescription, onClose, setSelectedImage }) => {
+  const [selectedImageLocal, setSelectedImageLocal] = useState(null);
 
   const handleImageChange = (e) => {
     if (e.target.files && e.target.files[0]) {
-      setSelectedImage(URL.createObjectURL(e.target.files[0]));
+      const imageURL = URL.createObjectURL(e.target.files[0]);
+      setSelectedImage(imageURL); // Update the parent component's state
+      setSelectedImageLocal(imageURL); // Optionally update local state
     }
   };
 
   const handleRemoveImage = () => {
     setSelectedImage(null);
+    setSelectedImageLocal(null);
   };
 
   return (
@@ -30,9 +33,8 @@ const SideMenu = ({ title, setTitle, description, setDescription, onClose }) => 
       <input
         type="text"
         value={title}
-        onChange={(e) => setTitle(e.target.value)}
+        onChange={(e) => setTitle(e.target.value)} // Directly update Home's state
         className="border rounded w-full p-2 mb-4"
-        placeholder="Welcome to our form"
       />
 
       {/* Description input */}
@@ -40,9 +42,8 @@ const SideMenu = ({ title, setTitle, description, setDescription, onClose }) => 
       <input
         type="text"
         value={description}
-        onChange={(e) => setDescription(e.target.value)}
+        onChange={(e) => setDescription(e.target.value)} // Directly update Home's state
         className="border rounded w-full p-2 mb-4"
-        placeholder="This is a description of the form"
       />
 
       {/* Image input */}
@@ -52,15 +53,11 @@ const SideMenu = ({ title, setTitle, description, setDescription, onClose }) => 
       {/* Display selected or fallback image */}
       <div className="my-4">
         <img
-          src={
-            selectedImage
-              ? selectedImage
-              : image1 // Replace with the local image path
-          }
+          src={selectedImageLocal || image1} // Replace with the local image path
           alt="Selected"
           className="w-1/2 rounded"
         />
-        {selectedImage && (
+        {selectedImageLocal && (
           <button
             onClick={handleRemoveImage}
             className="bg-red-500 text-white p-1 mt-2 rounded"
@@ -68,13 +65,6 @@ const SideMenu = ({ title, setTitle, description, setDescription, onClose }) => 
             Remove Image
           </button>
         )}
-      </div>
-
-      {/* Placement buttons */}
-      <label className="block mb-2">Placement</label>
-      <div className="flex space-x-2">
-        <button className="border p-2 rounded">⬆️</button>
-        <button className="border p-2 rounded">⬇️</button>
       </div>
 
       {/* Save/Discard buttons */}
@@ -93,6 +83,7 @@ SideMenu.propTypes = {
   description: PropTypes.string.isRequired,
   setDescription: PropTypes.func.isRequired,
   onClose: PropTypes.func.isRequired,
+  setSelectedImage: PropTypes.func.isRequired,
 };
 
 export default SideMenu;
