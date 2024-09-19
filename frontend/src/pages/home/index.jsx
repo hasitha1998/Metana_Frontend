@@ -13,7 +13,7 @@ const Home = () => {
   };
 
   return (
-    <div className="flex h-full">
+    <div className="">
       {/* Side Menu for Settings */}
       <SideMenu
         title={title}
@@ -24,7 +24,7 @@ const Home = () => {
       />
 
       {/* Main Content Area */}
-      <div className="w-full sm:w-3/4 bg-white p-8 shadow-lg flex justify-start">
+      <div className="w-full  bg-white p-8 shadow-lg flex justify-start">
         <div className="w-full sm:w-1/2 ">
           <h1 className="text-3xl font-bold mb-4">{title}</h1>
           <p className="mb-4">{description}</p>
