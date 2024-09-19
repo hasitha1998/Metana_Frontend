@@ -1,6 +1,6 @@
 import { useState } from 'react';
-import SideMenu from '../../components/SideMenu';
-import image1 from '../../images/image1.jpg';
+import SideMenu from '../../components/SideMenu'; // Make sure the path is correct
+import image1 from '../../images/image1.jpg'; // Make sure the image path is correct
 
 const Home = () => {
   const [title, setTitle] = useState("Welcome to our form");
