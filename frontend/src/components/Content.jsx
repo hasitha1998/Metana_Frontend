@@ -32,13 +32,13 @@ const Content = () => {
   return (
     <div className="relative w-full max-w-md mx-auto mt-4 p-4 rounded-md">
       
+      
       {isSideMenuVisible && (
-        <div className="fixed inset-0 z-50">
-          <SideMenu 
-            onClose={() => setIsSideMenuVisible(false)} 
-          />
-        </div>
-      )}
+  <div className="fixed inset-0 z-50">
+    <SideMenu onClose={() => setIsSideMenuVisible(false)} /> {/* Ensure onClose is passed */}
+  </div>
+)}
+
 
       <h2 className="text-lg font-semibold mb-4">Steps</h2>
       <p className="text-sm text-gray-500 mb-4">
@@ -48,40 +48,43 @@ const Content = () => {
       {/* Display fields */}
       <div className="space-y-2">
         <button
-          className="p-2 w-full bg-gray-100 rounded-md text-left"
+          className="p-2 w-full bg-gray-100 rounded-md text-center"
           onClick={() => handleFieldClick({ label: 'Welcome screen' })}
         >
           Welcome screen
         </button>
 
         {fields.map((field) => (
-          <div
-            key={field.id}
-            className="flex items-center justify-between p-2 bg-gray-100 rounded-md cursor-pointer"
-            onClick={() => handleFieldClick(field)}
-          >
-            <span>{field.label}</span>
-            <button
-              onClick={(e) => {
-                e.stopPropagation();
-                removeField(field.id);
-              }}
-              className="text-red-500 hover:text-red-700"
-            >
-              &times;
-            </button>
-          </div>
-        ))}
+  <div
+    key={field.id}
+    className="w-full flex justify-between items-center p-2 bg-gray-100 rounded-md cursor-pointer"
+    onClick={() => handleFieldClick(field)}
+  >
+    <span className="flex-grow text-center">{field.label}</span>
+    <button
+      onClick={(e) => {
+        e.stopPropagation();
+        removeField(field.id);
+      }}
+      className="text-red-500 hover:text-red-700"
+    >
+      &times;
+    </button>
+  </div>
+))}
+
 
         {/* Add new field button */}
+        <div className='mt-[2rem]'>
         <button
           onClick={openModal}
-          className="w-full p-2 bg-white border border-gray-300 rounded-md text-gray-600 hover:bg-gray-100"
+          className="w-1/3  bg-white border border-gray-300 rounded-md text-gray-600 hover:bg-gray-100 font-medium mb-[2rem]"
         >
           + Add field
         </button>
-
-        <button className="p-2 w-full bg-gray-100 rounded-md text-left">End screen</button>
+<hr></hr>
+        <button className="p-2 w-full bg-gray-100 rounded-md  mt-[2rem]">End screen</button>
+        </div>
       </div>
 
       {/* Bottom buttons */}
