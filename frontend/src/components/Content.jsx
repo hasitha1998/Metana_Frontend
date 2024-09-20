@@ -45,7 +45,7 @@ const Content = () => {
         The steps users will take to complete the form
       </p>
 
-      {/* Display fields */}
+      
       <div className="space-y-2">
         <button
           className="p-2 w-full bg-gray-100 rounded-md text-center"
@@ -87,7 +87,7 @@ const Content = () => {
         </div>
       </div>
 
-      {/* Bottom buttons */}
+      
       <div className="mt-4 flex justify-between">
         <button className="px-4 py-2 bg-black text-white rounded-md">
           Save & Publish
@@ -95,7 +95,7 @@ const Content = () => {
         <button className="px-4 py-2 text-red-500">Delete</button>
       </div>
 
-      {/* Modal for selecting field type */}
+      
       {isModalOpen && (
         <div className="fixed inset-0 bg-gray-900 bg-opacity-50 flex justify-center items-center">
           <div className="bg-white p-6 rounded-lg w-full max-w-lg shadow-lg relative">

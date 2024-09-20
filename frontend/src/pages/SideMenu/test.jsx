@@ -32,7 +32,7 @@ const Test = ({ onClose }) => {
 
   return (
     <div className="w-1/4 bg-white p-4 min-h-screen relative ml-4">
-      {/* Close Button */}
+      
       <button
         onClick={onClose}
         className="absolute top-4 right-4 text-gray-600 hover:text-gray-900"
@@ -42,7 +42,7 @@ const Test = ({ onClose }) => {
 
       <h2 className="text-xl font-bold mb-4">Settings</h2>
 
-      {/* Title Input */}
+      
       <label className="block mb-2">Title</label>
       <input
         type="text"
@@ -51,7 +51,7 @@ const Test = ({ onClose }) => {
         className="border rounded w-full p-2 mb-4"
       />
 
-      {/* Description Input */}
+     
       <label className="block mb-2">Description</label>
       <input
         type="text"
@@ -60,11 +60,11 @@ const Test = ({ onClose }) => {
         className="border rounded w-full p-2 mb-4"
       />
 
-      {/* Image Upload */}
+      
       <label className="block mb-2">Image</label>
       <input type="file" onChange={handleImageChange} className="mb-4" />
 
-      {/* Image Preview and Remove Image Button */}
+      
       <div className="my-4">
         <img
           src={image || image1}
@@ -78,7 +78,7 @@ const Test = ({ onClose }) => {
         )}
       </div>
 
-      {/* Image Placement Buttons */}
+      
       <div className="my-4 flex space-x-2 items-center">
         <span className="text-gray-700">Placement</span>
         <button
@@ -98,7 +98,7 @@ const Test = ({ onClose }) => {
         </button>
       </div>
 
-      {/* Save and Discard Buttons */}
+     
       <div className="flex space-x-4 mt-4">
         <button 
           onClick={() => console.log("Save clicked")} 

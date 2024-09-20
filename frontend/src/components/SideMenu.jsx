@@ -8,8 +8,8 @@ const SideMenu = ({ title, setTitle, description, setDescription, onClose, setSe
   const handleImageChange = (e) => {
     if (e.target.files && e.target.files[0]) {
       const imageURL = URL.createObjectURL(e.target.files[0]);
-      setSelectedImage(imageURL); // Update parent component's state
-      setSelectedImageLocal(imageURL); // Update local state
+      setSelectedImage(imageURL); 
+      setSelectedImageLocal(imageURL); 
     }
   };
 
@@ -25,32 +25,32 @@ const SideMenu = ({ title, setTitle, description, setDescription, onClose, setSe
       </button>
       <h2 className="text-xl font-bold mb-4">Settings</h2>
 
-      {/* Title input */}
+      
       <label className="block mb-2">Title</label>
       <input
         type="text"
         value={title}
-        onChange={(e) => setTitle(e.target.value)} // Directly update the parent's state
+        onChange={(e) => setTitle(e.target.value)} 
         className="border rounded w-full p-2 mb-4"
       />
 
-      {/* Description input */}
+    
       <label className="block mb-2">Description</label>
       <input
         type="text"
         value={description}
-        onChange={(e) => setDescription(e.target.value)} // Directly update the parent's state
+        onChange={(e) => setDescription(e.target.value)} 
         className="border rounded w-full p-2 mb-4"
       />
 
-      {/* Image input */}
+      
       <label className="block mb-2">Image</label>
       <input type="file" onChange={handleImageChange} className="mb-4" />
 
-      {/* Display selected or fallback image */}
+     
       <div className="my-4">
         <img
-          src={selectedImageLocal || image1} // Replace with local image path
+          src={selectedImageLocal || image1} 
           alt="Selected"
           className="w-1/2 rounded"
         />
@@ -61,7 +61,7 @@ const SideMenu = ({ title, setTitle, description, setDescription, onClose, setSe
         )}
       </div>
 
-      {/* Save/Discard buttons */}
+      
       <div className="mt-4">
         <button className="bg-black text-white p-2 rounded">Save</button>
         <button className="text-red-500 ml-2">Discard</button>
