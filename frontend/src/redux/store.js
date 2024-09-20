@@ -6,3 +6,11 @@ export const store = configureStore({
     title: titleReducer, // Add the title reducer to the store
   },
 });
+// import { configureStore } from '@reduxjs/toolkit';
+// import homeReducer from './homeSlice'; // Import the reducer
+
+// export const store = configureStore({
+//   reducer: {
+//     home: homeReducer,
+//   },
+// });
