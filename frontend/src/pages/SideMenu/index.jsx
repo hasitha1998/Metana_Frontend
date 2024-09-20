@@ -1,14 +1,14 @@
 
 import Test from "./test";
 
-import { WellcomeProvider } from "../../context/WelcomeScreenContext";
+import { WelcomeProvider } from "../../context/WelcomeScreenContext";
 
 const index = () => {
   return (
     <>
-      <WellcomeProvider>
+      <WelcomeProvider>
         <Test />
-      </WellcomeProvider>
+      </WelcomeProvider>
     </>
   );
 };

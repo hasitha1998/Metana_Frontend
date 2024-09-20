@@ -1,29 +1,34 @@
+// titleSlice.js
 import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
-  title: "Welcome to our form",
-  description: "This is a description of the form",
-  image: null, // Initially no image
+  title: 'hello',
+  description: 'description',
+  image: null,
+  imagePlacement: 'left',  // Default placement
 };
 
-const homeSlice = createSlice({
-  name: 'home',
+const titleSlice = createSlice({
+  name: 'title',
   initialState,
   reducers: {
-    updateTitle: (state, action) => {
+    setTitle(state, action) {
       state.title = action.payload;
     },
-    updateDescription: (state, action) => {
+    setDescription(state, action) {
       state.description = action.payload;
     },
-    updateImage: (state, action) => {
+    setImage(state, action) {
       state.image = action.payload;
     },
-    removeImage: (state) => {
+    removeImage(state) {
       state.image = null;
-    }
+    },
+    setImagePlacement(state, action) {
+      state.imagePlacement = action.payload;
+    },
   },
 });
 
-export const { updateTitle, updateDescription, updateImage, removeImage } = homeSlice.actions;
-export default homeSlice.reducer;
+export const { setTitle, setDescription, setImage, removeImage, setImagePlacement } = titleSlice.actions;
+export default titleSlice.reducer;

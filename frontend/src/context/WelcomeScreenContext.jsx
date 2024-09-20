@@ -1,14 +1,14 @@
 import { createContext, useState , } from "react";
 
-const WellcomeContext = createContext();
+const WelcomeContext = createContext();
 
 // eslint-disable-next-line react/prop-types
-export function WellcomeProvider({ children }) {
+export function WelcomeProvider({ children }) {
 
   const [title, setTitle] = useState("Welcome to our form 2");
 
   return (
-    <WellcomeContext.Provider
+    <WelcomeContext.Provider
       value={{
         title,
         setTitle
@@ -16,8 +16,8 @@ export function WellcomeProvider({ children }) {
       }}
     >
       {children}
-    </WellcomeContext.Provider>
+    </WelcomeContext.Provider>
   );
 }
 
-export default WellcomeContext;
+export default WelcomeContext;

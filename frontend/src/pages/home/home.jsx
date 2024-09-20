@@ -1,23 +1,23 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { useSelector } from 'react-redux';
 import image1 from '../../images/image1.jpg';
-import Test from '../test';
+import Test from '../SideMenu';
 
 const Home = () => {
   const [showSettings, setShowSettings] = useState(true);
 
-  const title = useSelector((state) => state.title.title); // Access Redux state
+  const title = useSelector((state) => state.title.title); 
   const description = useSelector((state) => state.title.description); 
   const selectedImage = useSelector((state) => state.title.image);
-  const imagePlacement = useSelector((state) => state.title.imagePlacement); // Get image placement from Redux
+  const imagePlacement = useSelector((state) => state.title.imagePlacement); 
 
   return (
     <div className="flex w-full">
-      {/* <Test /> Test will also be connected to Redux */}
+      
       {showSettings && <Test onClose={() => setShowSettings(false)} />} 
       <div className="w-full sm:w-3/4 bg-white p-8 shadow-lg flex justify-between border">
         <div className={`w-full sm:w-1/2 mt-[10rem] ${imagePlacement === 'right' ? 'order-last' : ''}`}>
-          <h1 className="text-3xl font-bold mb-4">{title}</h1> {/* Title from Redux */}
+          <h1 className="text-3xl font-bold mb-4">{title}</h1> 
           <p className="mb-4">{description}</p>
         </div>
 

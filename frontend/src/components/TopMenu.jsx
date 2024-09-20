@@ -6,13 +6,13 @@ import Share from '../components/Share';
 import Replies from '../components/Replies';
 
 const TopMenu = ({ onMenuChange }) => {
-  // Add state to track which menu is active
-  const [activeMenu, setActiveMenu] = useState('content'); // Set 'content' as the default
+  
+  const [activeMenu, setActiveMenu] = useState('content');
 
   const handleMenuClick = (menu) => {
-    setActiveMenu(menu);  // Set the active menu in state
+    setActiveMenu(menu);  
     if (onMenuChange) {
-      onMenuChange(menu);  // Trigger the prop function if passed
+      onMenuChange(menu);  
     }
   };
 
@@ -27,11 +27,11 @@ const TopMenu = ({ onMenuChange }) => {
       case 'replies':
         return <Replies />;
       default:
-        return <Content />; // Default component
+        return <Content />; 
     }
   };
 
-  // Add a function to return the active class if the menu is active
+  
   const getMenuClass = (menu) =>
     menu === activeMenu ? 'bg-white font-bold rounded-md' : 'hover:bg-white rounded-md py-3';
 
@@ -83,7 +83,7 @@ const TopMenu = ({ onMenuChange }) => {
         </span>
       </div>
 
-      {/* Render the active component below the TopMenu */}
+      
       <div className="p-4">
         {renderActiveComponent()}
       </div>
@@ -91,9 +91,9 @@ const TopMenu = ({ onMenuChange }) => {
   );
 };
 
-// Add prop-types validation for onMenuChange
+
 TopMenu.propTypes = {
-  onMenuChange: PropTypes.func.isRequired,  // Specify that onMenuChange is a required function prop
+  onMenuChange: PropTypes.func.isRequired,  
 };
 
 export default TopMenu;

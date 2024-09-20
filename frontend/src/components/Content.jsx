@@ -1,19 +1,19 @@
 import { useState } from 'react';
 //import SideMenu from './SideMenu'; // Import your existing SideMenu component
-import SideMenu from '../pages/test'; 
+import SideMenu from '../pages/SideMenu'; 
 
 const Content = () => {
   const [fields, setFields] = useState([
     { id: 1, label: 'Enter your name' },
     { id: 2, label: 'Enter your email' },
   ]);
-  const [isModalOpen, setIsModalOpen] = useState(false); // Modal state
-  const [isSideMenuVisible, setIsSideMenuVisible] = useState(false); // Side menu visibility state
+  const [isModalOpen, setIsModalOpen] = useState(false); 
+  const [isSideMenuVisible, setIsSideMenuVisible] = useState(false); 
 
   const addField = (type) => {
     const newField = { id: fields.length + 1, label: type };
     setFields([...fields, newField]);
-    setIsModalOpen(false); // Close modal after selecting a field
+    setIsModalOpen(false); 
   };
 
   const removeField = (id) => {
@@ -22,7 +22,7 @@ const Content = () => {
 
   const handleFieldClick = (field) => {
     if (field.label === 'Welcome screen') {
-      setIsSideMenuVisible(true); // Show side menu when Welcome screen is clicked
+      setIsSideMenuVisible(true); 
     }
   };
 
@@ -31,11 +31,11 @@ const Content = () => {
 
   return (
     <div className="relative w-full max-w-md mx-auto mt-4 p-4 rounded-md">
-      {/* Existing SideMenu component, loaded at the top of the page */}
+      
       {isSideMenuVisible && (
         <div className="fixed inset-0 z-50">
           <SideMenu 
-            onClose={() => setIsSideMenuVisible(false)} // Optional: Close handler if needed
+            onClose={() => setIsSideMenuVisible(false)} 
           />
         </div>
       )}
